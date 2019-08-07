@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=v0.4.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png?v=v0.4.0">
+
+
+  <link rel="mask-icon" href="/uploads/logo.svg?v=v0.4.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="深度学习,人工智能,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="松喜凉的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="转自微信公众号THU数据派独家 | 你的神经网络不起作用的37个理由（附链接）THU数据派  今天文章转载自公众号  数据派THU 数据派THU ， 作者 数据派 作者：Slav Ivanov 翻译：吴金笛 校对：丁楠雅 本文约4400字，建议阅读12分钟。 本文列举了在搭建神经网络过程中的37个易错点，并给出了解决建议。 有一个网络已经训练了12个小时。一切看起来都很好：梯度是逐渐变化的，损失在">
+<meta name="keywords" content="深度学习,人工智能">
+<meta property="og:type" content="article">
+<meta property="og:title" content="独家 | 你的神经网络不起作用的37个理由（附链接）【转】">
+<meta property="og:url" content="https://xiliangsong.github.io/2019/08/05//articles/2019/08/05/1564967236202.html/index.html">
+<meta property="og:site_name" content="松喜凉的博客">
+<meta property="og:description" content="转自微信公众号THU数据派独家 | 你的神经网络不起作用的37个理由（附链接）THU数据派  今天文章转载自公众号  数据派THU 数据派THU ， 作者 数据派 作者：Slav Ivanov 翻译：吴金笛 校对：丁楠雅 本文约4400字，建议阅读12分钟。 本文列举了在搭建神经网络过程中的37个易错点，并给出了解决建议。 有一个网络已经训练了12个小时。一切看起来都很好：梯度是逐渐变化的，损失在">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-08-05T01:07:16.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="独家 | 你的神经网络不起作用的37个理由（附链接）【转】">
+<meta name="twitter:description" content="转自微信公众号THU数据派独家 | 你的神经网络不起作用的37个理由（附链接）THU数据派  今天文章转载自公众号  数据派THU 数据派THU ， 作者 数据派 作者：Slav Ivanov 翻译：吴金笛 校对：丁楠雅 本文约4400字，建议阅读12分钟。 本文列举了在搭建神经网络过程中的37个易错点，并给出了解决建议。 有一个网络已经训练了12个小时。一切看起来都很好：梯度是逐渐变化的，损失在">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: 'v0.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiliangsong.github.io/2019/08/05//articles/2019/08/05/1564967236202.html/">
+
+
+
+
+
+  <title>独家 | 你的神经网络不起作用的37个理由（附链接）【转】 | 松喜凉的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">松喜凉的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">松喜凉的博客小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiliangsong.github.io/2019/08/05/articles/2019/08/05/1564967236202.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松喜凉">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/Head_portrait.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松喜凉的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">独家 | 你的神经网络不起作用的37个理由（附链接）【转】</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-05T09:07:16+08:00">
+                2019-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  3.6k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"> 分钟
+                  12
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转自微信公众号<a href="[https://mp.weixin.qq.com/s?__biz=MzAxMzA2MDYxMw==&mid=2651569204&idx=1&sn=6b000f42b6cf24327d2e5ff1673b3dba&chksm=8057435eb720ca486dff0b85d80ce9daad11aa2505a538ba8c3cfe9082240f8cf20c8659f02c&scene=0&xtrack=1#rd](https://mp.weixin.qq.com/s?__biz=MzAxMzA2MDYxMw==&mid=2651569204&idx=1&sn=6b000f42b6cf24327d2e5ff1673b3dba&chksm=8057435eb720ca486dff0b85d80ce9daad11aa2505a538ba8c3cfe9082240f8cf20c8659f02c&scene=0&xtrack=1#rd)[https://mp.weixin.qq.com/s?__biz=MzAxMzA2MDYxMw==&mid=2651569204&idx=1&sn=6b000f42b6cf24327d2e5ff1673b3dba&chksm=8057435eb720ca486dff0b85d80ce9daad11aa2505a538ba8c3cfe9082240f8cf20c8659f02c&scene=0&xtrack=1#rd](https://mp.weixin.qq.com/s?__biz=MzAxMzA2MDYxMw==&mid=2651569204&idx=1&sn=6b000f42b6cf24327d2e5ff1673b3dba&chksm=8057435eb720ca486dff0b85d80ce9daad11aa2505a538ba8c3cfe9082240f8cf20c8659f02c&scene=0&xtrack=1#rd)">THU数据派</a><br>独家 | 你的神经网络不起作用的37个理由（附链接）<br>THU数据派  今天<br>文章转载自公众号  数据派THU 数据派THU ， 作者 数据派</p>
+<p>作者：Slav Ivanov</p>
+<p>翻译：吴金笛</p>
+<p>校对：丁楠雅</p>
+<p>本文约4400字，建议阅读12分钟。</p>
+<p>本文列举了在搭建神经网络过程中的37个易错点，并给出了解决建议。</p>
+<p>有一个网络已经训练了12个小时。一切看起来都很好：梯度是逐渐变化的，损失在减少。但接下来的预测：都是零，所有的图像背景都没有被检测到。“我做错了什么？”——我问我的电脑，但它没有回答我。</p>
+<p>你从哪里开始检查是否你的模型输出了垃圾（例如，预测输出了平均值，或者它的准确性真的很差)？</p>
+<p>由于许多原因，神经网络可能不会进行训练。在许多调试过程中，我经常发现自己在做同样的检查。我把我的经验和最好的想法整理在这个便利的列表中，希望它们对你也有用。</p>
+<p>[TOC]</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ol>
+<li><p>如何使用本指南？</p>
+</li>
+<li><p>数据集问题</p>
+</li>
+<li><p>数据规范化或增强的问题</p>
+</li>
+<li><p>实现问题</p>
+</li>
+<li><p>训练问题<br>[TOC]</p>
+</li>
+</ol>
+<h2 id="1-如何使用本指南？"><a href="#1-如何使用本指南？" class="headerlink" title="1.如何使用本指南？"></a>1.如何使用本指南？</h2><p>很多方面都可能出错。但是其中一些比其他的更有可能被防范。我通常从以下简短的清单开始，作为紧急的第一反应：</p>
+<ol>
+<li><p>从一个已知适用于这类数据的简单模型开始（例如，图像的VGG）。如果可能，使用标准损失。</p>
+</li>
+<li><p>关闭所有的附加功能，例如正则化和数据增强。</p>
+</li>
+<li><p>如果对一个模型进行微调，要仔细检查预处理，因为它应该与原始模型的训练相同。</p>
+</li>
+<li><p>验证输入数据是否正确。</p>
+</li>
+<li><p>从一个非常小的数据集（2-20个样本）开始。对它进行过度拟合，并逐渐添加更多的数据。</p>
+</li>
+<li><p>开始逐步添加所有被省略的部分：增强/正则化、自定义损失函数、尝试更复杂的模型。</p>
+</li>
+</ol>
+<p>如果上面的步骤没有解决问题，那就根据下面的列表逐一验证。</p>
+<h2 id="2-数据集问题"><a href="#2-数据集问题" class="headerlink" title="2.数据集问题"></a>2.数据集问题</h2><p>1.检查你的输入数据</p>
+<p>检查你向网络输入的数据是否有意义。例如，我不止一次搞混了图像的宽度和高度。有时候，我会错误地输入全0数据。或者我会一遍又一遍地使用相同的批次。因此，打印/显示几批输入和目标输出，以确保它们是正确的。</p>
+<p>2.尝试随机输入</p>
+<p>尝试传入随机数而不是实际数据，看看错误是否相同。如果是这样，这是一个确定的信号，说明你的网络在某个时候将数据转换为了垃圾。试着一层一层或一个操作一个操作的调试看看哪里出错了。</p>
+<ol start="3">
+<li>检查数据加载程序</li>
+</ol>
+<p>你的数据可能没问题，但是将输入传递到网络的代码可能会出错。在任何操作之前打印并检查第一层的输入。</p>
+<ol start="4">
+<li>确保输入连接到输出</li>
+</ol>
+<p>检查一些输入样本是否有正确的标签。同时确保对输入样例进行打乱的方式与输出标签的相同。</p>
+<ol start="5">
+<li>输入和输出之间的关系是否过于随机？</li>
+</ol>
+<p>也许与随机部分相比，输入输出关系中的非随机部分太小了（人们可能认为股价就是这样的）。即输入与输出不充分相关。没有一种通用的方法来检测这一点，因为这取决于数据的性质。</p>
+<ol start="6">
+<li>数据集中是否有太多噪音？</li>
+</ol>
+<p>当我从一个食品网站上抓取一个图像数据集时，这种情况发生在我身上。有很多网络无法学习的不好的标签。手动检查一批输入样本，看看标签是否正常。</p>
+<p>截止点是有争议的，因为此文（<a href="https://arxiv.org/pdf/1412.6596.pdf）使用50％损坏的标签使MNIST的准确度达到50％以上。" target="_blank" rel="noopener">https://arxiv.org/pdf/1412.6596.pdf）使用50％损坏的标签使MNIST的准确度达到50％以上。</a></p>
+<ol start="7">
+<li>打乱数据集</li>
+</ol>
+<p>如果你的数据集没有被打乱，并且有一个特定的顺序（按标签排序），这可能会对学习产生负面影响。打乱你的数据集以避免这种情况。确保输入和标签打的乱顺序相同。</p>
+<ol start="8">
+<li>减少类别不平衡</li>
+</ol>
+<p>是否每个B类图像对应1000个A类图像？那么你可能需要平衡你的损失函数或尝试其他类不平衡方法。（<a href="https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/）" target="_blank" rel="noopener">https://machinelearningmastery.com/tactics-to-combat-imbalanced-classes-in-your-machine-learning-dataset/）</a></p>
+<ol start="9">
+<li>你有足够的训练样本吗？</li>
+</ol>
+<p>如果你正在从零开始训练一个网络（即不是微调），你可能需要大量的数据。对于图像分类，人们认为每个类需要1000张或更多的图像。</p>
+<p>（<a href="https://stats.stackexchange.com/questions/226672/how-few-training-examples-is-too-few-when-training-a-neural-network/226693#226693）" target="_blank" rel="noopener">https://stats.stackexchange.com/questions/226672/how-few-training-examples-is-too-few-when-training-a-neural-network/226693#226693）</a></p>
+<ol start="10">
+<li>确保你的批次中不只包含一个标签</li>
+</ol>
+<p>这可能发生在排序的数据集中（即前10k个样本包含相同的类)。通过打乱数据集很容易解决。</p>
+<ol start="11">
+<li>减少批量大小</li>
+</ol>
+<p>此文（<a href="https://arxiv.org/abs/1609.04836）指出，批量较大会降低模型的泛化能力。" target="_blank" rel="noopener">https://arxiv.org/abs/1609.04836）指出，批量较大会降低模型的泛化能力。</a></p>
+<p>除了1。使用标准数据集（例如mnist、cifar10）<br>感谢@hengcherkeng:<br>当测试新的网络架构或编写新的代码时，首先使用标准数据集，而不是你自己的数据。这是因为这些数据集有很多参考结果，并且它们被证明是“可解的”。不存在标签噪声、训练/测试分布差异、数据集难度过大等问题。</p>
+<h2 id="3-数据则正则化或增强"><a href="#3-数据则正则化或增强" class="headerlink" title="3.数据则正则化或增强"></a>3.数据则正则化或增强</h2><ol start="12">
+<li>规范的功能</li>
+</ol>
+<p>你是否将输入标准化为零均值和单位方差？</p>
+<ol start="13">
+<li>你的数据增强太多了吗？</li>
+</ol>
+<p>增强具有正则化作用。与其他形式的正则化（权重L2、dropout等）结合使用过多会导致网络不匹配。</p>
+<ol start="14">
+<li>检查预训练模型的预处理</li>
+</ol>
+<p>如果你使用的是预训练模型，请确保使用的规范化和预处理与训练时使用的模型相同。例如，一个图像像素是否应该在[0,1]、[- 1,1]或[0,255]范围内。</p>
+<ol start="15">
+<li>检查训练/验证/测试集的预处理</li>
+</ol>
+<p>CS231n指出了一个常见的陷阱：</p>
+<p>“…任何预处理统计数据(例如数据平均值)必须只计算在训练数据上，然后应用于验证/测试数据。例如，计算平均值并从整个数据集中的每个图像减去它，然后将数据分割为训练集/验证集/测试集，这是一个错误。”</p>
+<p>此外，检查每个样本或批次的不同预处理。</p>
+<h2 id="4-实现问题"><a href="#4-实现问题" class="headerlink" title="4.实现问题"></a>4.实现问题</h2><ol start="16">
+<li>试着解决这个问题的简单版本</li>
+</ol>
+<p>这将有助于找到问题所在。例如，如果目标输出是一个对象类和坐标，则尝试将预测限制为对象类。</p>
+<ol start="17">
+<li>“随机”寻找正确的损失</li>
+</ol>
+<p>同样来自优秀的CS231n：使用小参数初始化，无需正则化。例如，如果我们有10个类，随机意味着我们将在10%的时间内得到正确的类，而Softmax损失是正确类的概率的对数的相反数，所以:-ln(0.1) = 2.302。</p>
+<p>在此之后，尝试增加正则化强度，这会增加损失。</p>
+<ol start="18">
+<li>检查损失函数</li>
+</ol>
+<p>如果你实现了自己的损失函数，请检查它是否有错误并添加单元测试。通常情况下，我的损失值会略微不正确，并小程度的降低网络的性能。</p>
+<ol start="19">
+<li>验证损失输入</li>
+</ol>
+<p>如果你正在使用框架提供的损失函数，请确保传递给它的是它所期望的值。例如，在PyTorch中，我将混合NLLLoss和CrossEntropyLoss，因为前者需要一个softmax输入，而后者不需要。</p>
+<p>20.调整损失权重</p>
+<p>如果损失由几个较小的损失函数组成，请确保它们相对于每个损失函数的大小是正确的。这可能需要测试不同的损失权重的组合。</p>
+<ol start="21">
+<li>监视其他指标</li>
+</ol>
+<p>有时候，损失并不最好的预测器来判断你的网络是否在正常训练。如果可以，请使用其他指标，如准确性。</p>
+<ol start="22">
+<li>测试任何自定义层</li>
+</ol>
+<p>是否网络中的某一层是你自己实现的？请反复检查以确保它们按预期工作。</p>
+<ol start="23">
+<li>检查“冻结”层或变量</li>
+</ol>
+<p>检查是否无意中禁用了一些应该被学习的层/变量的梯度更新。</p>
+<ol start="24">
+<li>增加网络的大小</li>
+</ol>
+<p>也许你的网络的表现力不足以捕获目标功能。尝试在完全连接的层中添加更多层或更多隐藏单元。</p>
+<ol start="25">
+<li>检查隐藏的维度错误</li>
+</ol>
+<p>如果你的输入是(k, H, W) =(64, 64, 64)，那么很容易忽略与错误维度相关的错误。对输入维使用奇怪的数字（例如，每个维使用不同的素数)，并检查它们如何在网络中传播。</p>
+<ol start="26">
+<li>进行梯度检查</li>
+</ol>
+<p>如果你手工实现梯度下降，进行梯度检查可以确保你的反向传播能够正常工作。更多信见:<br>1 <a href="http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/" target="_blank" rel="noopener">http://ufldl.stanford.edu/tutorial/supervised/DebuggingGradientChecking/</a></p>
+<p>2 <a href="http://cs231n.github.io/neural-networks-3/#gradcheck" target="_blank" rel="noopener">http://cs231n.github.io/neural-networks-3/#gradcheck</a></p>
+<p>3<a href="https://www.coursera.org/lecture/machine-learning/gradient-checking-Y3s6r" target="_blank" rel="noopener">https://www.coursera.org/lecture/machine-learning/gradient-checking-Y3s6r</a></p>
+<h2 id="5-训练问题"><a href="#5-训练问题" class="headerlink" title="5.训练问题"></a>5.训练问题</h2><ol start="27">
+<li>解决一个非常小的数据集</li>
+</ol>
+<p>对一小部分数据进行过度拟合，并确保其工作正常。例如，只训练1或2个例子，看看你的网络能否学会区分这些。继续对每个类别添加更多的示例。</p>
+<ol start="28">
+<li>检查权重初始化</li>
+</ol>
+<p>如果不确定，请使用Xavier或He初始化。此外，你的初始化可能会导致错误的局部最小值，因此尝试不同的初始化，看看是否有帮助。</p>
+<ol start="29">
+<li>更改超参数</li>
+</ol>
+<p>也许你使用了一组特别糟糕的超参数。如果可行，尝试网格搜索。</p>
+<p>30.减少正规化</p>
+<p>过多的正则化会导致网络严重不拟合。减少正则化，如dropout、batch norm、weight/bias L2正则化等。在优秀的“程序员实践深度学习”课程中，Jeremy Howard建议首先摆脱不拟合。这意味着你要对训练数据进行充分的过拟合，然后才能解决过拟合问题。</p>
+<ol start="31">
+<li>给它时间</li>
+</ol>
+<p>也许你的网络在开始做出有意义的预测之前需要更长的时间来训练。如果你的损失在稳步下降，就再训练更多的时间。</p>
+<ol start="32">
+<li>从训练模式切换到测试模式</li>
+</ol>
+<p>有些框架具有Batch Norm、Dropout等层，其他层在训练和测试期间的行为有所不同。切换到适当的模式可能有助于你的网络正确预测。</p>
+<ol start="33">
+<li>可视化训练</li>
+</ol>
+<p>监视每一层的激活、权重和更新。</p>
+<p>确保它们的大小匹配。</p>
+<p>例如，参数更新的大小(权重和偏差)应该是1-e3。</p>
+<p>考虑一个可视化库，比如Tensorboard和Crayon。</p>
+<p>在紧要关头，你还可以打印权重/偏差/激活。</p>
+<p>注意那些平均值远远大于0的层激活。尝试Batch Norm或ELUs。</p>
+<p>Deeplearning4j指出了在权重和偏差的直方图中应该期望什么:</p>
+<p>“对于权重，这些直方图应该在一段时间后具有近似高斯(正态)分布。对于偏差，这些直方图通常从0开始，并且通常以近似高斯分布结束(LSTM是一个例外)。注意那些发散到+/-∞的参数。注意那些非常大的偏移量。如果类别的分布非常不平衡，有时可能会在输出层中进行分类。”</p>
+<p>检查层的更新，他们应该形成一个高斯分布。</p>
+<ol start="34">
+<li>尝试不同的优化器</li>
+</ol>
+<p>你选择的优化器不应该阻止你的网络进行训练，除非你选择了特别糟糕的超参数。然而，合适的任务优化器有助于在最短的时间内获得最多的训练。该论文指出你正在使用的算法应该指定优化器。如果没有，我倾向于使用Adam或带动量的普通SGD。</p>
+<p>查看这篇由Sebastian Ruder撰写的优秀文章，了解更多关于梯度下降优化器的知识。</p>
+<p><a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="noopener">http://ruder.io/optimizing-gradient-descent/</a></p>
+<ol start="35">
+<li>爆炸/消失的梯度</li>
+</ol>
+<p>检查层的更新，因为非常大的值可以说明梯度爆炸。梯度剪切可能会有所帮助。</p>
+<p>检查层激活。Deeplearning4j提供了一个很好的指导方针：“激活的良好标准偏差在0.5到2.0之间。明显超出这一范围可能意味着消失或爆炸的激活。”</p>
+<ol start="36">
+<li>升高/降低学习率</li>
+</ol>
+<p>低学习率将导致你的模型收敛得非常缓慢。</p>
+<p>高学习率会在开始时迅速减少损失，但可能很难找到一个好的解决方案。</p>
+<p>用你目前的学习速度乘以0.1或10来解决问题。</p>
+<ol start="37">
+<li>克服NaN</li>
+</ol>
+<p>在训练RNN时，据我所知，得到一个NaN（Non-a-Number）是一个更大的问题。一些解决方法：</p>
+<p>降低学习速度，特别是如果你在前100次迭代中得到了NaNs。</p>
+<p>NaNs可以由除以0，或0或负数的自然对数产生。</p>
+<p>Russell Stewart在如何应对NaN中有很好的建议。</p>
+<p><a href="http://get.mysecurify.com/view/item_81593.html" target="_blank" rel="noopener">http://get.mysecurify.com/view/item_81593.html</a></p>
+<p>试着一层一层地评估你的网络，看看NaNs出现在哪里。</p>
+<p>我遗漏什么了吗？有什么错误吗？请在下方留言让我知道。</p>
+<p>嗨，朋友，我是Slav，企业家和开发者。此外，我也是SaaS公司Encharge - marketing automation software的联合创始人。</p>
+<p>原文标题：37 Reasons why your Neural Network is not working<br>原文链接：<a href="https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607" target="_blank" rel="noopener">https://blog.slavv.com/37-reasons-why-your-neural-network-is-not-working-4020854bd607</a></p>
+<p>编辑：王菁<br>校对：林亦霖</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    松喜凉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xiliangsong.github.io/2019/08/05/articles/2019/08/05/1564967236202.html/" title="独家 | 你的神经网络不起作用的37个理由（附链接）【转】">https://xiliangsong.github.io/2019/08/05/articles/2019/08/05/1564967236202.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习/" rel="tag"> <i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/人工智能/" rel="tag"> <i class="fa fa-tag"></i> 人工智能</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564908213769.html/" rel="next" title="推荐几个免费漂亮的开源个人网站系统">
+                <i class="fa fa-chevron-left"></i> 推荐几个免费漂亮的开源个人网站系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/05/articles/2019/08/05/1564967346799.html/" rel="prev" title="机器学习法则：（谷歌）机器学习工程最佳实践 【转】">
+                机器学习法则：（谷歌）机器学习工程最佳实践 【转】 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/Head_portrait.png" alt="松喜凉">
+            
+              <p class="site-author-name" itemprop="name">松喜凉</p>
+              <p class="site-description motion-element" itemprop="description">欢迎来到松喜凉的分享站~</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/CJCSDN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度搜索" target="_blank">百度搜索</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="theme-next" target="_blank">theme-next</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiliangsong.github.io/" title="我的网址" target="_blank">我的网址</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="xiliang:8080" title="我的博客" target="_blank">我的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-如何使用本指南？"><span class="nav-number">2.</span> <span class="nav-text">1.如何使用本指南？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据集问题"><span class="nav-number">3.</span> <span class="nav-text">2.数据集问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-数据则正则化或增强"><span class="nav-number">4.</span> <span class="nav-text">3.数据则正则化或增强</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-实现问题"><span class="nav-number">5.</span> <span class="nav-text">4.实现问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-训练问题"><span class="nav-number">6.</span> <span class="nav-text">5.训练问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松喜凉</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=v0.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=v0.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=v0.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

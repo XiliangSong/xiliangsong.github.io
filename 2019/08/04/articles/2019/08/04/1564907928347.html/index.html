@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=v0.4.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png?v=v0.4.0">
+
+
+  <link rel="mask-icon" href="/uploads/logo.svg?v=v0.4.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="开源博客系统,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="松喜凉的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="转自玄学酱 对于程序员来说，除了苦修技术，写博客将开发过程和开发经验记录下来，也是非常有意义的事情。既能帮助自己梳理思绪，也能让其他人避免重复踩坑，还能抛砖引玉，得到更多同行的指点和建议。 开源的博客系统非常多，其中不乏优秀之作，但最符合本地化需求的，当属国产。接下来，推荐几款优秀的且保持更新的国产开源博客系统。 1、Solo Solo 是一款一个命令就能搭建好的 Java 开源博客系统，包括 M">
+<meta name="keywords" content="开源博客系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="接地气又好用，8 款优秀的国产开源博客系统推荐">
+<meta property="og:url" content="https://xiliangsong.github.io/2019/08/04//articles/2019/08/04/1564907928347.html/index.html">
+<meta property="og:site_name" content="松喜凉的博客">
+<meta property="og:description" content="转自玄学酱 对于程序员来说，除了苦修技术，写博客将开发过程和开发经验记录下来，也是非常有意义的事情。既能帮助自己梳理思绪，也能让其他人避免重复踩坑，还能抛砖引玉，得到更多同行的指点和建议。 开源的博客系统非常多，其中不乏优秀之作，但最符合本地化需求的，当属国产。接下来，推荐几款优秀的且保持更新的国产开源博客系统。 1、Solo Solo 是一款一个命令就能搭建好的 Java 开源博客系统，包括 M">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://s3.51cto.com/wyfs02/M00/8F/2F/wKiom1jWV9LRlUgvAAEyRMEEAdM674.jpg-wh_651x-s_181720403.jpg">
+<meta property="og:image" content="http://s2.51cto.com/wyfs02/M00/8F/2D/wKioL1jWV-GAe-OOAAHk1TfQX4I407.jpg">
+<meta property="og:image" content="http://s3.51cto.com/wyfs02/M02/8F/2D/wKioL1jWV-2wyFLKAAHJJDCyNIE767.jpg">
+<meta property="og:image" content="http://s2.51cto.com/wyfs02/M01/8F/2F/wKiom1jWV_nxCCmtAADKPBn8ZNs759.jpg">
+<meta property="og:image" content="http://s5.51cto.com/wyfs02/M01/8F/2D/wKioL1jWWATQapg9AAD3zCzp2l4195.jpg">
+<meta property="og:image" content="http://s2.51cto.com/wyfs02/M00/8F/2F/wKiom1jWWA_Q8qlzAAFJlFOSrXQ197.jpg">
+<meta property="og:image" content="http://s5.51cto.com/wyfs02/M02/8F/2F/wKiom1jWWBmzpJFeAAFBYQN8_Ow129.jpg">
+<meta property="og:image" content="http://s3.51cto.com/wyfs02/M02/8F/2D/wKioL1jWWCfAnaKWAAMVRmiLAcg221.jpg">
+<meta property="og:updated_time" content="2019-08-04T08:38:48.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="接地气又好用，8 款优秀的国产开源博客系统推荐">
+<meta name="twitter:description" content="转自玄学酱 对于程序员来说，除了苦修技术，写博客将开发过程和开发经验记录下来，也是非常有意义的事情。既能帮助自己梳理思绪，也能让其他人避免重复踩坑，还能抛砖引玉，得到更多同行的指点和建议。 开源的博客系统非常多，其中不乏优秀之作，但最符合本地化需求的，当属国产。接下来，推荐几款优秀的且保持更新的国产开源博客系统。 1、Solo Solo 是一款一个命令就能搭建好的 Java 开源博客系统，包括 M">
+<meta name="twitter:image" content="http://s3.51cto.com/wyfs02/M00/8F/2F/wKiom1jWV9LRlUgvAAEyRMEEAdM674.jpg-wh_651x-s_181720403.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: 'v0.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiliangsong.github.io/2019/08/04//articles/2019/08/04/1564907928347.html/">
+
+
+
+
+
+  <title>接地气又好用，8 款优秀的国产开源博客系统推荐 | 松喜凉的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">松喜凉的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">松喜凉的博客小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564907928347.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松喜凉">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/Head_portrait.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松喜凉的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">接地气又好用，8 款优秀的国产开源博客系统推荐</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T16:38:48+08:00">
+                2019-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  918 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"> 分钟
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转自<a href="https://yq.aliyun.com/articles/188016" target="_blank" rel="noopener"><a href="https://yq.aliyun.com/users/xlyqrd2zxlspg" target="_blank" rel="noopener">玄学酱</a></a></p>
+<p>对于程序员来说，除了苦修技术，写博客将开发过程和开发经验记录下来，也是非常有意义的事情。既能帮助自己梳理思绪，也能让其他人避免重复踩坑，还能抛砖引玉，得到更多同行的指点和建议。</p>
+<p>开源的博客系统非常多，其中不乏优秀之作，但最符合本地化需求的，当属国产。接下来，推荐几款优秀的且保持更新的国产开源博客系统。</p>
+<p><strong>1、Solo</strong></p>
+<p>Solo 是一款一个命令就能搭建好的 Java 开源博客系统，包括 Markdown / TinyMCE / KindEditor、自定义导航(页面、链接)、草稿夹、评论/回复邮件提醒、随机文章 / 相关文章 / 置顶 / 更新提醒、多语言、代码高亮等多项实用功能。它还内置了 15+ 套精心制作的皮肤，有自己的活跃社区。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs3.51cto.com%2Fwyfs02%2FM00%2F8F%2F2F%2FwKiom1jWV9LRlUgvAAEyRMEEAdM674.jpg-wh_651x-s_181720403.jpg" target="_blank" rel="noopener"><img src="http://s3.51cto.com/wyfs02/M00/8F/2F/wKiom1jWV9LRlUgvAAEyRMEEAdM674.jpg-wh_651x-s_181720403.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>2、Tale</strong></p>
+<p>Tale 使用了轻量级mvc框架 Blade 开发，默认主题使用了漂亮的 pinghsu，设计简洁，界面美观，支持多主题和 Emoji 表情，支持网易云音乐播放和数据库备份，以及 Markdown 文章发布，且部署发布简单，不依赖 Tomcat。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs2.51cto.com%2Fwyfs02%2FM00%2F8F%2F2D%2FwKioL1jWV-GAe-OOAAHk1TfQX4I407.jpg" target="_blank" rel="noopener"><img src="http://s2.51cto.com/wyfs02/M00/8F/2D/wKioL1jWV-GAe-OOAAHk1TfQX4I407.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>3、NiceFish</strong></p>
+<p>NiceFish(美人鱼)是一个微型博客系统，前端基于 Angular 2 + ng2-Bootstrap，后端可以是任意技术。</p>
+<p>NiceFish 的系统管理界面 NiceFish-Admin 和 Java 版后台 NiceFish-SpringMybatis 也在制作当中，NiceFish 用来展示 Angular2 在典型的门户型项目中的用法，NiceFish-Admin 用来展示 Angular2 在后台管理型项目里面的用法，NiceFish-SpringMybatis 用来展示 Angular2 如何与 Java 版的 Server 端进行对接。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs3.51cto.com%2Fwyfs02%2FM02%2F8F%2F2D%2FwKioL1jWV-2wyFLKAAHJJDCyNIE767.jpg" target="_blank" rel="noopener"><img src="http://s3.51cto.com/wyfs02/M02/8F/2D/wKioL1jWV-2wyFLKAAHJJDCyNIE767.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>4、DUZHI_BLOG</strong></p>
+<p>DUZHI_BLOG 是基于 Jpress 进行更新而来的，在上面做了一系列升级、Bug 修复等等。在基础上增加了用户中心、lucene search 全文搜索引擎等功能，优化了微信渠道内容，避免无法搜索的场景，解决应用型问题，并自带一套与官网一致的主题。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs2.51cto.com%2Fwyfs02%2FM01%2F8F%2F2F%2FwKiom1jWV_nxCCmtAADKPBn8ZNs759.jpg" target="_blank" rel="noopener"><img src="http://s2.51cto.com/wyfs02/M01/8F/2F/wKiom1jWV_nxCCmtAADKPBn8ZNs759.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>5、PJ Blog</strong></p>
+<p>PJ Blog 是一个使用 Laravel 和 Vue.js 构建的博客系统，支持 Markdown 编辑器、用户管理、文章管理、讨论管理以及文件管理等功能，包含内容审核和评论系统，支持多标签。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs5.51cto.com%2Fwyfs02%2FM01%2F8F%2F2D%2FwKioL1jWWATQapg9AAD3zCzp2l4195.jpg" target="_blank" rel="noopener"><img src="http://s5.51cto.com/wyfs02/M01/8F/2D/wKioL1jWWATQapg9AAD3zCzp2l4195.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>6、Firekylin</strong></p>
+<p>Firekylin 是一个高效简洁的动态博客系统，整体基于 ThinkJS 框架，后台采用了 React 技术栈。</p>
+<p>Firekylin 提供了丰富的设置，可以尽情个性化自己的博客，比如基本的描述、名称、LOGO设置，阅读设置、评论设置等等。它还将博客模板统一到主题文件夹中，能够自由的切换主题达到修改博客外观的目的。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs2.51cto.com%2Fwyfs02%2FM00%2F8F%2F2F%2FwKiom1jWWA_Q8qlzAAFJlFOSrXQ197.jpg" target="_blank" rel="noopener"><img src="http://s2.51cto.com/wyfs02/M00/8F/2F/wKiom1jWWA_Q8qlzAAFJlFOSrXQ197.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>7、ZrLog</strong></p>
+<p>ZrLog 是使用 Java 开发的博客系统，具有简约、易用、组件化、内存占用低等特点。自带 Markdown 编辑器，让更多的精力放在写作上，而不是花费大量时间在学习程序的使用上。</p>
+<p>ZrLog 提供日志、分类、标签、评论的管理，支持插件模式，主题高度可定制，还可发表私有文章。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs5.51cto.com%2Fwyfs02%2FM02%2F8F%2F2F%2FwKiom1jWWBmzpJFeAAFBYQN8_Ow129.jpg" target="_blank" rel="noopener"><img src="http://s5.51cto.com/wyfs02/M02/8F/2F/wKiom1jWWBmzpJFeAAFBYQN8_Ow129.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+<p><strong>8、mblog</strong></p>
+<p>mblog (mtons blog) 是一个简单、大气、美观、支持多端(PC&amp;Mobile&amp;Pad)访问的的多人博客系统，采用 Java 语言开发，基于 MySQL 数据库;具有性能优异、简单实用、安全稳定、支持全文检索的特点。</p>
+<p>mblog 包含标签分类、统计阅读次数、喜爱文章收藏、文章评论、表情回复、第三方(微博、QQ)登录、站内搜索、用户订阅等功能，支持 ueditor/markdown 编辑器切换。</p>
+<p><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fs3.51cto.com%2Fwyfs02%2FM02%2F8F%2F2D%2FwKioL1jWWCfAnaKWAAMVRmiLAcg221.jpg" target="_blank" rel="noopener"><img src="http://s3.51cto.com/wyfs02/M02/8F/2D/wKioL1jWWCfAnaKWAAMVRmiLAcg221.jpg" alt="接地气又好用，8 款优秀的国产开源博客系统推荐"></a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    松喜凉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564907928347.html/" title="接地气又好用，8 款优秀的国产开源博客系统推荐">https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564907928347.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/开源博客系统/" rel="tag"> <i class="fa fa-tag"></i> 开源博客系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564907835669.html/" rel="next" title="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器">
+                <i class="fa fa-chevron-left"></i> 搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564907987882.html/" rel="prev" title="推荐几款优秀的开源博客系统">
+                推荐几款优秀的开源博客系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/Head_portrait.png" alt="松喜凉">
+            
+              <p class="site-author-name" itemprop="name">松喜凉</p>
+              <p class="site-description motion-element" itemprop="description">欢迎来到松喜凉的分享站~</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/CJCSDN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度搜索" target="_blank">百度搜索</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="theme-next" target="_blank">theme-next</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiliangsong.github.io/" title="我的网址" target="_blank">我的网址</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="xiliang:8080" title="我的博客" target="_blank">我的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松喜凉</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=v0.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=v0.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=v0.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

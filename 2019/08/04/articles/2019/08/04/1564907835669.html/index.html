@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=v0.4.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png?v=v0.4.0">
+
+
+  <link rel="mask-icon" href="/uploads/logo.svg?v=v0.4.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="ngrok,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="松喜凉的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="转自Sunny博客 搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器以下为本篇文章全部内容： 视频教程：http://video.tudou.com/v/XMTc4ODY3MTg4MA==.html     ngrok 是一个使用go语言编写的反向代理软件，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道">
+<meta name="keywords" content="ngrok">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器">
+<meta property="og:url" content="https://xiliangsong.github.io/2019/08/04//articles/2019/08/04/1564907835669.html/index.html">
+<meta property="og:site_name" content="松喜凉的博客">
+<meta property="og:description" content="转自Sunny博客 搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器以下为本篇文章全部内容： 视频教程：http://video.tudou.com/v/XMTc4ODY3MTg4MA==.html     ngrok 是一个使用go语言编写的反向代理软件，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.sunnyos.com/upfiles/images/201510/0614440669181017.png">
+<meta property="og:image" content="http://www.sunnyos.com/public/home/images/SunnyBlog.png">
+<meta property="og:image" content="http://www.sunnyos.com/public/home/images/ThinkPHP.png">
+<meta property="og:image" content="http://pub.idqqimg.com/wpa/images/group.png">
+<meta property="og:image" content="http://pub.idqqimg.com/wpa/images/group.png">
+<meta property="og:updated_time" content="2019-08-04T08:37:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器">
+<meta name="twitter:description" content="转自Sunny博客 搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器以下为本篇文章全部内容： 视频教程：http://video.tudou.com/v/XMTc4ODY3MTg4MA==.html     ngrok 是一个使用go语言编写的反向代理软件，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道">
+<meta name="twitter:image" content="https://www.sunnyos.com/upfiles/images/201510/0614440669181017.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: 'v0.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiliangsong.github.io/2019/08/04//articles/2019/08/04/1564907835669.html/">
+
+
+
+
+
+  <title>搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器 | 松喜凉的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">松喜凉的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">松喜凉的博客小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564907835669.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松喜凉">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/Head_portrait.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松喜凉的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T16:37:15+08:00">
+                2019-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"> 分钟
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>转自<a href="https://www.sunnyos.com/article-show-48.html" target="_blank" rel="noopener">Sunny博客</a></p>
+<h1 id="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器"><a href="#搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器" class="headerlink" title="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器"></a>搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器</h1><p><strong>以下为本篇文章全部内容：</strong></p>
+<p>视频教程：<a href="http://video.tudou.com/v/XMTc4ODY3MTg4MA==.html" title="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器" target="_blank" rel="noopener">http://video.tudou.com/v/XMTc4ODY3MTg4MA==.html</a></p>
+<pre><code>    ngrok 是一个使用go语言编写的反向代理软件，通过在公共的端点和本地运行的 Web 服务器之间建立一个安全的通道。ngrok 可捕获和分析所有通道上的流量，便于后期分析和重放。在官方网站上面可以注册一个账号自己使用，不需要自己搭建也行，但是缺点就是速度慢，还有经常会连不上，所以我们可以通过自己搭建来解决这些问题。对于想本地开发或者想做内网穿透的话ngrok可以帮你这个忙，我们都知道在微信开发的时候，微信服务器只认80端口，这样导致我们哪怕修改一行代码都得把代码上传到服务器上面，就在传文件的时候就已经浪费了特别的时间了，而如果我们把ngrok用上的话就可以节省很多时间，因为外网完全可以访问到内网的web服务器上，哪怕是你自己的电脑。我之前也做过《[如何通过SocketLog进行web和微信开发调试](http://www.sunnyos.com/article-show-35.html &quot;如何通过SocketLog进行web和微信开发调试&quot;)》的教程，如果把ngrok和SocketLog搭配起来用的话，我们调试起来就更方便了，除了做微信之外，我们在做支付功能的时候，处理异步回调也很麻烦，也得把文件上传到服务器上面去，可我们同样的使用ngrok和SocketLog结合起来用，我们可以不上传代码，也还可以通过浏览器console来查看处理的过程，快速的帮助我们排查错误。
+
+准备工作：
+
+    1、一台拥有公网ip的服务器或者vps  
+
+    2、把需要做的主域名解析到服务器上面
+
+软件下载地址：
+
+go的下载地址：http://www.golangtc.com/download
+
+git的下载地址：http://git-scm.com/downloads 绝对下载地址：https://www.kernel.org/pub/software/scm/git/git-2.6.0.tar.gz
+
+ngrok克隆地址：https://github.com/inconshreveable/ngrok.git
+
+准备映射的域名：ngrok.sunnyos.com</code></pre><p> 安装git  </p>
+<p>1、安装git，我安装的是2.6版本，防止会出现另一个错误，安装git所需要的依赖包</p>
+<ol>
+<li>yum -y install zlib-devel openssl-devel perl hg cpio expat-devel gettext-devel curl curl-devel perl-ExtUtils-MakeMaker hg wget gcc gcc-c++</li>
+</ol>
+<p>2、下载git</p>
+<ol>
+<li>wget <a href="https://www.kernel.org/pub/software/scm/git/git-2.6.0.tar.gz" target="_blank" rel="noopener">https://www.kernel.org/pub/software/scm/git/git-2.6.0.tar.gz</a></li>
+</ol>
+<p>3、解压git</p>
+<ol>
+<li>tar zxvf git-2.6.0.tar.gz</li>
+</ol>
+<p>4、编译git</p>
+<ol>
+<li>cd git-2.6.0</li>
+<li>./configure –prefix=/usr/local/git</li>
+<li>make</li>
+<li>make install</li>
+</ol>
+<p>5、创建git的软连接</p>
+<ol>
+<li><p>ln -s /usr/local/git/bin/* /usr/bin/</p>
+<p>安装go环境  </p>
+</li>
+</ol>
+<p>准备go环境，我的系统是32位的centos所以我下载386的包</p>
+<p>1、下载go的软件包</p>
+<ol>
+<li>wget <a href="http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-386.tar.gz" target="_blank" rel="noopener">http://www.golangtc.com/static/go/1.4.2/go1.4.2.linux-386.tar.gz</a></li>
+</ol>
+<p>2、解压出来可以随便指定位置</p>
+<ol>
+<li>tar -zxvf go1.4.2.linux-386.tar.gz</li>
+<li>mv go /usr/local/</li>
+</ol>
+<p>3、go的命令需要做软连接到/usr/bin</p>
+<ol>
+<li>ln -s /usr/local/go/bin/* /usr/bin/</li>
+</ol>
+<p>编译ngrok</p>
+<ol>
+<li>cd /usr/local/</li>
+<li>git clone <a href="https://github.com/inconshreveable/ngrok.git" target="_blank" rel="noopener">https://github.com/inconshreveable/ngrok.git</a></li>
+<li>export GOPATH=/usr/local/ngrok/</li>
+<li>export NGROK_DOMAIN=”ngrok.sunnyos.com”</li>
+<li>cd ngrok</li>
+</ol>
+<p>为域名生成证书</p>
+<ol>
+<li>openssl genrsa -out rootCA.key 2048</li>
+<li>openssl req -x509 -new -nodes -key rootCA.key -subj “/CN=$NGROK_DOMAIN” -days 5000 -out rootCA.pem</li>
+<li>openssl genrsa -out server.key 2048</li>
+<li>openssl req -new -key server.key -subj “/CN=$NGROK_DOMAIN” -out server.csr</li>
+<li>openssl x509 -req -in server.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out server.crt -days 5000</li>
+</ol>
+<p>在软件源代码目录下面会生成一些证书文件，我们需要把这些文件拷贝到指定位置</p>
+<ol>
+<li>cp rootCA.pem assets/client/tls/ngrokroot.crt</li>
+<li>cp server.crt assets/server/tls/snakeoil.crt</li>
+<li>cp server.key assets/server/tls/snakeoil.key</li>
+</ol>
+<p>如果是在天朝的服务器需要改，香港或者国外的服务器不需要</p>
+<ol>
+<li>vim /usr/local/ngrok/src/ngrok/log/logger.go</li>
+<li>log “github.com/keepeye/log4go”</li>
+</ol>
+<p>指定编译环境变量，如何确认GOOS和GOARCH，可以通过go env来查看</p>
+<p>编译服务端</p>
+<ol>
+<li>cd /usr/local/go/src</li>
+<li>GOOS=linux GOARCH=386 ./make.bash</li>
+<li>cd /usr/local/ngrok/</li>
+<li>GOOS=linux GOARCH=386 make release-server</li>
+</ol>
+<p>编译客户端，我的是mac os 64位操作系统，所以我的是下面的命令</p>
+<ol>
+<li>cd /usr/local/go/src</li>
+<li>GOOS=darwin GOARCH=amd64 ./make.bash</li>
+<li>cd /usr/local/ngrok/</li>
+<li>GOOS=darwin GOARCH=amd64 make release-client</li>
+</ol>
+<p>Windows的客户端编译</p>
+<ol>
+<li>cd /usr/local/go/src</li>
+<li>GOOS=windows GOARCH=amd64 ./make.bash</li>
+<li>cd /usr/local/ngrok/</li>
+<li>GOOS=windows GOARCH=amd64 make release-client</li>
+</ol>
+<p>客户端配置文件</p>
+<ol>
+<li>server_addr: “ngrok.sunnyos.com:4443”</li>
+<li>trust_host_root_certs: false</li>
+</ol>
+<p>服务端启动</p>
+<ol>
+<li>/usr/local/ngrok/bin/ngrokd -domain=”$NGROK_DOMAIN” -httpAddr=”:80”</li>
+</ol>
+<p>客户端使用</p>
+<ol>
+<li>./ngrok -config=./ngrok.cfg -subdomain=blog 80</li>
+<li>setsid ./ngrok -config=./ngrok.cfg -subdomain=test 80 #在linux下如果想后台运行</li>
+</ol>
+<p>启动成功如下效果</p>
+<p><img src="https://www.sunnyos.com/upfiles/images/201510/0614440669181017.png" alt="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器"></p>
+<p>—————————问题总汇，以下非重点，出现问题再看————————–</p>
+<p>出现这个错误说明我们需要安装hg</p>
+<p>package code.google.com/p/log4go: exec: “hg”: executable file not found in $PATH</p>
+<p>解决办法</p>
+<ol>
+<li>yum install hg -y</li>
+</ol>
+<p>编译到 go get gopkg.in/yaml.v1 的时候卡住不走了，说明是git比较低，版本需要大于1.7.9.5以上</p>
+<p>fatal: Unable to find remote helper for ‘https’ 出现这个问题，可以重新安装 curl curl-devel 然后再重装git</p>
+<p>安装git-core</p>
+<ol>
+<li>wget <a href="https://www.kernel.org/pub/software/scm/git/git-core-0.99.6.tar.gz" target="_blank" rel="noopener">https://www.kernel.org/pub/software/scm/git/git-core-0.99.6.tar.gz</a></li>
+<li>tar zxvf git-core-0.99.6.tar.gz</li>
+<li>cd git-core-0.99.6</li>
+<li>make prefix=/usr/libexec/git-core install</li>
+<li>export PATH=$PATH:/usr/libexec/git-core/</li>
+</ol>
+<p>谢谢大家对本博客的支持，本站专注原创技术文章，请尊重原创，杜绝百度上面出现的各种一模一样的帖子，让我们一起努力做更优质的文章。且看且珍惜博主的心得。请转载带上本文链接注明出处。</p>
+<p>如果大家有什么疑问可以加我QQ327388905进行解答，也可以加入交流群</p>
+<p>群二维码</p>
+<p>Sunny博客技术交流群：</p>
+<p><img src="http://www.sunnyos.com/public/home/images/SunnyBlog.png" alt></p>
+<p>ThinkPHP交流群：</p>
+<p><img src="http://www.sunnyos.com/public/home/images/ThinkPHP.png" alt></p>
+<p>Sunny博客技术交流群：57914191 <a href="http://shang.qq.com/wpa/qunwpa?idkey=0fb7a9bf017e8b2c44d0898f99b9b8eb00a03b1af94ffb4bd800495bd3ca40ee" target="_blank" rel="noopener"><img src="http://pub.idqqimg.com/wpa/images/group.png" alt="Sunny博客技术交流群"></a></p>
+<p>ThinkPHP交流群：57914282 <a href="http://shang.qq.com/wpa/qunwpa?idkey=abec7b437ed32fc847b71a4490259e3ac8e92cd8484929191d115bb9ec1e12d4" target="_blank" rel="noopener"><img src="http://pub.idqqimg.com/wpa/images/group.png" alt="ThinkPHP技术交流"></a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    松喜凉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564907835669.html/" title="搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器">https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564907835669.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ngrok/" rel="tag"> <i class="fa fa-tag"></i> ngrok</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564907257995.html/" rel="next" title="十个你可能不知道的CloudFlare免费CDN加速技巧-SSL\DDOS\Cache">
+                <i class="fa fa-chevron-left"></i> 十个你可能不知道的CloudFlare免费CDN加速技巧-SSL\DDOS\Cache
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564907928347.html/" rel="prev" title="接地气又好用，8 款优秀的国产开源博客系统推荐">
+                接地气又好用，8 款优秀的国产开源博客系统推荐 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/Head_portrait.png" alt="松喜凉">
+            
+              <p class="site-author-name" itemprop="name">松喜凉</p>
+              <p class="site-description motion-element" itemprop="description">欢迎来到松喜凉的分享站~</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/CJCSDN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度搜索" target="_blank">百度搜索</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="theme-next" target="_blank">theme-next</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiliangsong.github.io/" title="我的网址" target="_blank">我的网址</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="xiliang:8080" title="我的博客" target="_blank">我的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器"><span class="nav-number">1.</span> <span class="nav-text">搭建属于自己的ngrok服务器，实现内网穿透，外网访问内网，可本地开发微信不需要上传服务器</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松喜凉</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=v0.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=v0.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=v0.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

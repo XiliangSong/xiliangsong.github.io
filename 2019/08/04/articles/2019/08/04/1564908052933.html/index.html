@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=v0.4.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/apple-touch-icon.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon-32x32.png?v=v0.4.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon-16x16.png?v=v0.4.0">
+
+
+  <link rel="mask-icon" href="/uploads/logo.svg?v=v0.4.0" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="免费开源博客程序CMS系统,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="松喜凉的博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="个人博客网站常用的6个免费开源博客程序CMS系统文章分类：搬瓦工应用 发布时间：2019年07月05日 便宜VPS主机活动推送QQ群：190252490 国内主机推荐：腾讯云新人特价活动198/年 早年我们做网站的时候得需要点技术含量的，程序都需要我们自己撰写的。或者我们就老老实实在新浪博客、搜狐、网易博客开通账号直接在上面写博客。不过，如今随着网络的发展，越来越多的高手会开源分享自己撰写的程序。">
+<meta name="keywords" content="免费开源博客程序CMS系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客网站常用的6个免费开源博客程序CMS系统">
+<meta property="og:url" content="https://xiliangsong.github.io/2019/08/04//articles/2019/08/04/1564908052933.html/index.html">
+<meta property="og:site_name" content="松喜凉的博客">
+<meta property="og:description" content="个人博客网站常用的6个免费开源博客程序CMS系统文章分类：搬瓦工应用 发布时间：2019年07月05日 便宜VPS主机活动推送QQ群：190252490 国内主机推荐：腾讯云新人特价活动198/年 早年我们做网站的时候得需要点技术含量的，程序都需要我们自己撰写的。或者我们就老老实实在新浪博客、搜狐、网易博客开通账号直接在上面写博客。不过，如今随着网络的发展，越来越多的高手会开源分享自己撰写的程序。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561790721345814.jpg">
+<meta property="og:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791059896831.jpg">
+<meta property="og:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791274753686.jpg">
+<meta property="og:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791425172025.jpg">
+<meta property="og:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791947621554.jpg">
+<meta property="og:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561792130807734.jpg">
+<meta property="og:updated_time" content="2019-08-04T08:40:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="个人博客网站常用的6个免费开源博客程序CMS系统">
+<meta name="twitter:description" content="个人博客网站常用的6个免费开源博客程序CMS系统文章分类：搬瓦工应用 发布时间：2019年07月05日 便宜VPS主机活动推送QQ群：190252490 国内主机推荐：腾讯云新人特价活动198/年 早年我们做网站的时候得需要点技术含量的，程序都需要我们自己撰写的。或者我们就老老实实在新浪博客、搜狐、网易博客开通账号直接在上面写博客。不过，如今随着网络的发展，越来越多的高手会开源分享自己撰写的程序。">
+<meta name="twitter:image" content="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561790721345814.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: 'v0.4.0',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiliangsong.github.io/2019/08/04//articles/2019/08/04/1564908052933.html/">
+
+
+
+
+
+  <title>个人博客网站常用的6个免费开源博客程序CMS系统 | 松喜凉的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">松喜凉的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">松喜凉的博客小站</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564908052933.html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="松喜凉">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/uploads/Head_portrait.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="松喜凉的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">个人博客网站常用的6个免费开源博客程序CMS系统</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-04T16:40:53+08:00">
+                2019-08-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1.5k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长"> 分钟
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="个人博客网站常用的6个免费开源博客程序CMS系统"><a href="#个人博客网站常用的6个免费开源博客程序CMS系统" class="headerlink" title="个人博客网站常用的6个免费开源博客程序CMS系统"></a>个人博客网站常用的6个免费开源博客程序CMS系统</h1><p>文章分类：<a href="https://www.cnbanwagong.com/yingyong.html" target="_blank" rel="noopener">搬瓦工应用</a> 发布时间：2019年07月05日</p>
+<p>便宜VPS主机活动推送QQ群：<strong><a href="https://jq.qq.com/?_wv=1027&k=531SS8p" target="_blank" rel="noopener">190252490</a></strong> 国内主机推荐：<strong><a href="http://t.cn/AilvJQf8" target="_blank" rel="noopener">腾讯云新人特价活动198/年</a></strong></p>
+<p>早年我们做网站的时候得需要点技术含量的，程序都需要我们自己撰写的。或者我们就老老实实在新浪博客、搜狐、网易博客开通账号直接在上面写博客。不过，如今随着网络的发展，越来越多的高手会开源分享自己撰写的程序。如今我们需要做网站基本上都可以找到免费的程序。比如如果我们需要做个人博客网站的时候，有很多的开源博客程序可以选择，比如WORDPRESS、ZBLOG等等。但是，在这些博客程序中都有什么优缺点呢？</p>
+<p>通过这篇文章，我们<a href="https://www.cnbanwagong.com/" target="_blank" rel="noopener">搬瓦工中文网</a>准备介绍当前市面上主流的一些开源博客程序，可以告诉大家的是每个程序都有各自的用户群，虽然我们知道WordPress前一段时间数据统计他们拥有足够多的用户，但是他也是有缺陷的，为什么不是100%用户选择呢？</p>
+<p><strong>第一、WordPress</strong></p>
+<p><img src="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561790721345814.jpg" alt="WordPress"></p>
+<p>目前，WordPress程序是用户量最大的独立博客程序系统，采用PHP+MYSQL架构的，至少需要PHP5.6+支持。大部分网友肯定是使用或者解除过这款程序。有提供丰富的免费主题模板、插件支持，而且基于用户很多，基本上我们需要的功能和问题都可以找到解决方案。</p>
+<p>不过WordPress商家程序还是有缺点的，比如占用系统资源多。而且随着网站的发展如果我们不去加以维护和升级配置，可能会使得网站速度变慢。如果我们需要更好的使用到WP程序，则需要有一定的技术含量的技术支持的。</p>
+<p><strong>第二、ZBLOG</strong></p>
+<p><img src="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791059896831.jpg" alt="ZBLOG"></p>
+<p>早年我们国内比较流行WINDOWS系统主机和服务器的时候，且那时候个人博客也比较流行期间，使用最多的是ZBLOG程序，当然那时候还是ASP+ACCESS数据库架构的。而且那时间有很多知名的个人博主都有使用，可以说ZBLOG程序那ASP时代非常的流行，虽然那时候也有WORDPRESS，但是基本国内很少有人使用。</p>
+<p>只是随着国内主机、服务器，以及国外服务器的盛行。商家提供的WIN服务器比较少，而且成本高，占用资源大，所以大家都相继转型PHP程序。ZBLOG PHP版本目前也有开发出来，使用用户还是比较多的。没有得到较好的发展原因是我们可以看到ZBLOG商家也有提供云平台发布主题和插件，但是大部分都是付费的，所以限制很多用户。</p>
+<p><strong>第三、TYPECHO</strong></p>
+<p><img src="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791274753686.jpg" alt="TYPECHO"></p>
+<p>当初TYPECHO程序开发的背景就是因为很多用户反馈WORDPRESS程序臃肿，而且占用资源大特别不方便。所以那时候才开发出TYPECHO程序，结构目录看似与WP相似，但是可以说非常的轻便。官方虽然更新速度不快，而且商家也有很多计划比如搭建云平台的计划不清楚在实时没有。</p>
+<p>虽然目前TYPECHO程序目前很少有新增功能和升级，但是这也许是这个程序的初衷，有基础的功能就可以。而且我们在论坛可以看到网友热情分享的主题模板和插件。TYPEChp程序适合个人日志博客实用，对于有需要丰富功能或者支持插件的，那不是特别适合，当然我们也可以看到有不少优秀的个人博客实用TYPECHO程序。</p>
+<p>*<em>第四、emlog *</em>  </p>
+<p><img src="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791425172025.jpg" alt="emlog "></p>
+<p>emlog 是 every memory log 的简称，意即：点滴记忆。是一款基于PHP和MySQL的功能强大的博客及CMS建站系统。致力于为您提供快速、稳定，且在使用上又极其简单、舒适的内容创作及站点搭建服务。这个是官方的介绍，实际上这款CMS博客程序使用用户还是蛮多的。官方也有提供不错的主题模板和插件支持，可以看出来用户是比ZBLOG多的，主要是ZBLOG因为付费的主题和插件限制了用户发展。</p>
+<p><strong>第五、Catfish鮸鱼CMS</strong></p>
+<p><img src="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561791947621554.jpg" alt="Catfish鮸鱼CMS"></p>
+<p>Catfish鮸鱼CMS程序是一款免费开源的PHP内容管理系统，只是看到版本更新也是比较频繁，而且只需要更换适合个人博客的主题就可以成为一个博客网站，所以也就列举为博客程序之一。官方也有提供免费主题和插件支持。但是估计在博客程序中使用这款软件的不是很多。</p>
+<p><strong>第六、Ghost</strong></p>
+<p><img src="https://www.cnbanwagong.com/zb_users/upload/2019/06/201906291561792130807734.jpg" alt="1.jpg"></p>
+<p>这款轻博客系统在国内有些技术博客中使用还是蛮多的。如果我们实际上是需要运营网站的使用GHOST是不合适的，因为内容撰写和分发是有点问题的，感觉不是特别适合内容型管理。但是如果是用来记录日志技术内容的，是可以使用的，可以显得你的技术很厉害，同类的也有其他。</p>
+<p>总结，如果我们是希望用到个人网站，希望以后运营盈利的，那就需要用到更新频繁的，这样确保程序的稳定。如果我们是用于自己玩玩，那可以选择一些偏门的程序，其他还有很多我们也没有整理的适合个人博客功能的程序。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    松喜凉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564908052933.html/" title="个人博客网站常用的6个免费开源博客程序CMS系统">https://xiliangsong.github.io/2019/08/04/articles/2019/08/04/1564908052933.html/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-ND 4.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/免费开源博客程序CMS系统/" rel="tag"> <i class="fa fa-tag"></i> 免费开源博客程序CMS系统</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564907987882.html/" rel="next" title="推荐几款优秀的开源博客系统">
+                <i class="fa fa-chevron-left"></i> 推荐几款优秀的开源博客系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/04/articles/2019/08/04/1564908213769.html/" rel="prev" title="推荐几个免费漂亮的开源个人网站系统">
+                推荐几个免费漂亮的开源个人网站系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/uploads/Head_portrait.png" alt="松喜凉">
+            
+              <p class="site-author-name" itemprop="name">松喜凉</p>
+              <p class="site-description motion-element" itemprop="description">欢迎来到松喜凉的分享站~</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/CJCSDN" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.baidu.com/" title="百度搜索" target="_blank">百度搜索</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hexo.io/" title="hexo" target="_blank">hexo</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://theme-next.iissnan.com/" title="theme-next" target="_blank">theme-next</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiliangsong.github.io/" title="我的网址" target="_blank">我的网址</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="xiliang:8080" title="我的博客" target="_blank">我的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#个人博客网站常用的6个免费开源博客程序CMS系统"><span class="nav-number">1.</span> <span class="nav-text">个人博客网站常用的6个免费开源博客程序CMS系统</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">松喜凉</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 本站访客数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人次
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 本站总访问量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=v0.4.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=v0.4.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=v0.4.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=v0.4.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
