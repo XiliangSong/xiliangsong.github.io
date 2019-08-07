@@ -2,12 +2,12 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>松喜凉的博客</title>
   
-  
+  <subtitle>松喜凉的博客小站</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://xiliangsong.github.io/"/>
   <updated>2019-08-07T03:25:24.949Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://xiliangsong.github.io/</id>
   
   <author>
     <name>松喜凉</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>My second Post</title>
-    <link href="http://yoursite.com/2019/08/07/My-second-Post/"/>
-    <id>http://yoursite.com/2019/08/07/My-second-Post/</id>
+    <link href="https://xiliangsong.github.io/2019/08/07/My-second-Post/"/>
+    <id>https://xiliangsong.github.io/2019/08/07/My-second-Post/</id>
     <published>2019-08-07T02:43:00.000Z</published>
     <updated>2019-08-07T03:25:24.949Z</updated>
     
@@ -32,16 +32,16 @@
     </summary>
     
     
-      <category term="个人记录" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/"/>
+      <category term="个人记录" scheme="https://xiliangsong.github.io/tags/%E4%B8%AA%E4%BA%BA%E8%AE%B0%E5%BD%95/"/>
     
-      <category term="欢迎" scheme="http://yoursite.com/tags/%E6%AC%A2%E8%BF%8E/"/>
+      <category term="欢迎" scheme="https://xiliangsong.github.io/tags/%E6%AC%A2%E8%BF%8E/"/>
     
   </entry>
   
   <entry>
     <title>您好！欢迎访问我的Hexo主页~</title>
-    <link href="http://yoursite.com/2019/06/24/hello-world/"/>
-    <id>http://yoursite.com/2019/06/24/hello-world/</id>
+    <link href="https://xiliangsong.github.io/2019/06/24/hello-world/"/>
+    <id>https://xiliangsong.github.io/2019/06/24/hello-world/</id>
     <published>2019-06-24T10:08:36.511Z</published>
     <updated>2019-06-24T10:14:53.429Z</updated>
     
