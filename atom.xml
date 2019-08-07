@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-08-07T02:51:06.910Z</updated>
+  <updated>2019-08-07T03:25:24.949Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/08/07/My-second-Post/"/>
     <id>http://yoursite.com/2019/08/07/My-second-Post/</id>
     <published>2019-08-07T02:43:00.000Z</published>
-    <updated>2019-08-07T02:51:06.910Z</updated>
+    <updated>2019-08-07T03:25:24.949Z</updated>
     
-    <content type="html"><![CDATA[<p>　　欢迎关注我的博客，这是我的第二个静态博客<br>　　也可以关注我的<a href="xiliang.ml:8080" target="_blank" rel="noopener">动态博客</a></p><a id="more"></a><p>　　欢迎关注我的博客，这是我的第二个静态博客<br>　　也可以关注我的<a href="xiliang.ml:8080" target="_blank" rel="noopener">动态博客</a><br>　　<br>　　我们要爱生活，爱家人，爱世界~</p>]]></content>
+    <content type="html"><![CDATA[<p>　　欢迎关注我的博客，这是我的第二个静态博客<br>　　也可以关注我的<a href="xiliang.ml:8080" target="_blank" rel="noopener">动态博客</a></p><a id="more"></a><p>　　<br>　　我们要爱生活，爱家人，爱世界~</p>]]></content>
     
     <summary type="html">
     
